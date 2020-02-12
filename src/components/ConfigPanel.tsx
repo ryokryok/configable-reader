@@ -12,12 +12,12 @@ const PanelFrame = styled.div`
 	width: 100%;
 	& * {
 		@media (prefers-color-scheme: dark) {
-			background-color: #222;
-			color: #eee;
+			background-color: #444;
+			color: #ddd;
 		}
 		@media (prefers-color-scheme: light) {
-			background-color: #eee;
-			color: #222;
+			background-color: #ddd;
+			color: #444;
 		}
 	}
 `;
@@ -58,7 +58,7 @@ const ControlSlider = styled.input`
 `;
 
 const ResetButton = styled.button`
-	border: 2px solid gray;
+	border: 0px none;
 	border-radius: 2em;
 	font-size: 1em;
 	padding: 0.5em;
