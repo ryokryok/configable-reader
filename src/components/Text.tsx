@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
-import { ConfigContext } from '../ContextProvider';
-import styled from 'styled-components';
-import { ConfigState } from '../Reducer';
-import ReactMarkdown from 'react-markdown';
-import rashomon from '../data/rashomon.json';
+import React, { useContext } from "react";
+import { ConfigContext } from "../ContextProvider";
+import styled from "styled-components";
+import { ConfigState } from "../Reducer";
+import ReactMarkdown from "react-markdown";
+import rashomon from "../data/rashomon.json";
 
 // prettier-ignore
 const Content =styled.div<ConfigState >`
-  padding : 0em 0.5em;
+  padding : 0.5em 0.5em;
+  max-width: 600px;
+  margin: 0 auto;
   font-family: ${({ font_family }) => (font_family ? `${font_family}` : '')};
   & > h1 {
     	font-size: 2em;
@@ -22,14 +24,18 @@ const Content =styled.div<ConfigState >`
 `;
 
 const Text = () => {
-	const state = useContext(ConfigContext);
-	return (
-		<div>
-			<Content font_size={state.font_size} line_height={state.line_height} font_family={state.font_family}>
-				<ReactMarkdown source={rashomon.text} />
-			</Content>
-		</div>
-	);
+  const state = useContext(ConfigContext);
+  return (
+    <div>
+      <Content
+        font_size={state.font_size}
+        line_height={state.line_height}
+        font_family={state.font_family}
+      >
+        <ReactMarkdown source={rashomon.text} />
+      </Content>
+    </div>
+  );
 };
 
 export default Text;
