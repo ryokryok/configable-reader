@@ -8,7 +8,7 @@ import rashomon from "../data/rashomon.json";
 // prettier-ignore
 const Content =styled.div<ConfigState >`
   padding : 0.5em 0.5em;
-  max-width: 600px;
+  max-width: 50em;
   margin: 0 auto;
   font-family: ${({ font_family }) => (font_family ? `${font_family}` : '')};
   & > h1 {
